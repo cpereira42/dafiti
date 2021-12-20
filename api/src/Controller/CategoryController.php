@@ -59,6 +59,26 @@ class CategoryController extends AbstractController
     }
 
     /**
+     * @Route("/category", methods={"GET"})
+     */
+    public function getCategory(): Response
+    {
+        $CategoryList = $this->categoryrepository->findAll();
+        return new JsonResponse($CategoryList);
+    }
+
+    /**
+     * @Route("category/{id}", methods={"DELETE"})
+     */
+    public function removecat(int $id): Response
+    {
+        $item = $this->categoryrepository->find($id);
+        $this->entityManager->remove($item);
+        $this->entityManager->flush();
+        return new Response ('Deleted',Response::HTTP_NO_CONTENT);
+    }
+
+    /**
      * @Route("/item", methods={"POST"})
      */
     public function new_item(Request $request): Response
@@ -76,14 +96,60 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/category", methods={"GET"})
+     * @Route("/item", methods={"GET"})
      */
-    public function getCategory(): Response
+    public function getItem(): Response
     {
-        $CategoryList = $this->categoryrepository->findAll();
-        return new JsonResponse($CategoryList);
+        $ItemList = $this->itemrepository->findAll();
+        return new JsonResponse($ItemList);
     }
 
+    /**
+     * @Route("/item/{id}", methods={"GET"})
+     */
+    public function getListItem($id): Response
+    {
+        $category = $this->categoryrepository->find($id);
+        $listitem = $this->itemrepository->findBy(['category'=>$category]);
+        return new JsonResponse($listitem);
+    }
+
+     /**
+     * @Route("/item/info/{id}", methods={"GET"})
+     */
+    public function getInfoItem($id): Response
+    {
+        $infoitem = $this->itemrepository->find($id);
+        return new JsonResponse($infoitem);
+    }
+
+    /**
+     * @Route("item/{id}", methods={"DELETE"})
+     */
+    public function remove(int $id): Response
+    {
+        $item = $this->itemrepository->find($id);
+        $this->entityManager->remove($item);
+        $this->entityManager->flush();
+        return new Response ('Deleted',Response::HTTP_NO_CONTENT);
+    }
+    
+    /**
+     * @Route("/item/{id}", methods={"PUT"})
+     */
+    public function Atualiza(int $id, Request $request): Response
+    {
+        $item = $this->itemrepository->find($id);
+        $item->setQtt($request->get('qtt'));
+        $item->setSize($request->get('size'));
+        $item->setColor($request->get('color'));
+        $item->setName($request->get('name'));
+        $this->entityManager->persist($item);
+        $this->entityManager->flush();
+        $this->entityManager->flush();
+        return new JsonResponse($item);
+    }
+    
     /**
     * @Route("/authe", methods={"GET"})
      */
@@ -92,7 +158,6 @@ class CategoryController extends AbstractController
         $email = $request->get('email');
         $password = $request->get('password');
 
-        return new JsonResponse(['email'=>$email,'password'=>"password"], Response::HTTP_OK);
-        //return $this->render('login.html');
+        return new JsonResponse(['email'=>$email,'password'=>$email], Response::HTTP_OK);
     }
 }

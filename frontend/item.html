@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Adicionar Item</title>
+  <title>Editar / Excluir Item</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,18 +19,27 @@
 <div class="login-box">
   <div class="card">
     <div class="card-body login-card-body">
-      <h3><p class="login-box-msg">Cadastro de Item</p></h3>
+      <h3><p class="login-box-msg">Editar/ Excluir Item</p></h3>
         <div class="input-group mb-3">
           <p class="login-box-msg">categoria</p>
-          <select name="category_list" id="category_list">
-            
-          </select>
+          <select name="category_list" id="category_list"></select>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
             </div>
           </div>
         </div>
+
+        <div class="input-group mb-3">
+          <p class="login-box-msg">Item</p>
+          <select name="item_list" id="item_list"></select>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+
         <div class="input-group mb-3">
           <input type="text" id="name_item" class="form-control" placeholder="Nome do Item" value ="">
           <div class="input-group-append">
@@ -72,7 +81,13 @@
             <span class="fas fa-envelope"></span>
           </div>
           <div class="col-40">
-            <button type="submit" id="add_item" class="btn btn-primary btn-block">Adicionar Item</button>
+            <button type="submit" id="save_item" class="btn btn-block btn-success">Salvar</button>
+          </div>
+          <div class="col-50">
+            <span class="fas fa-envelope"></span>
+          </div>
+          <div class="col-40">
+            <button type="submit" id="delete_item" class="btn btn-primary btn-danger">Excluir</button>
           </div>
         </div>
   </div>

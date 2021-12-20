@@ -112,7 +112,11 @@ class Item implements \JsonSerializable
     {
         return [
             'id' => $this->id,
-            'name' => $this->getName()
+            'name' => $this->getName(),
+            'qtt' => $this->getQtt(),
+            'size' => $this->getSize(),
+            'color' => $this->getColor(),
+            'cate' => $this->getCategory()
         ];
     }
 }
