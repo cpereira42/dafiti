@@ -43,41 +43,40 @@
 
 <br>
 
-## :dart: About ##
+## About ##
 
-Describe your project
-This project is an APIRestfull
+This project is an APIRestfull 
 
-## :rocket: Technologies ##
+## Technologies ##
 
 The following tools were used in this project:
 
-- [PHP]
-- [Symfony]
-- [MySQL]
+- PHP
+- Symfony
+- MySQL
 
-## :white_check_mark: Requirements ##
+##Requirements ##
 
 Before starting :<br>
-you need to have :<br>
-[Git]<br>
-[PHP7.4] installed.<br>
-[MYSQL] installed.<br>
-[COMPOSER] installed.<br>
+you need to have installed :
+- GIT
+- PHP7.4<br>
+- MYSQL<br>
+- COMPOSER<br>
 
 
 
-## :checkered_flag: Starting ##
+##Starting ##
 
 ```bash
 # Clone this project
-$ git clone https://github.com/cpereira42/dafiti
+git clone https://github.com/cpereira42/dafiti
 
 # Access
-$ cd dafiti/api
+cd dafiti/api
 
 # Install dependencies
-$ composer install
+composer install
 
 # Database
 open php.ini and uncomment "extension=pdo_mysql"
@@ -85,28 +84,26 @@ open .env and change database connect
 DATABASE_URL="mysql://root:password@127.0.0.1:3306/dafiti"
 
 # Create DB
-$ php bin/console doctrine:database:dafiti
+php bin/console doctrine:database:dafiti
 
 # Migrate DB
-$ php bin/console doctrine:migrations:migrate
+php bin/console doctrine:migrations:migrate
 
 # Start API # The server will initialize in the <http://localhost:8080>
-$ php -S localhost:8080 -t public
+php -S localhost:8080 -t public
 
 # Start Frontend # The server will initialize in the <http://localhost:8081>
-$ cd ../frontend
-$ php -S localhost:8081
+cd ../frontend
+php -S localhost:8081
 
 # Acess
 Acess link http://localhost:8081/index.html
-
 
 ```
 
 ## :memo: License ##
 
-
-Made with :heart: by <a href="https://github.com/cpereira42" target="_blank">{{YOUR_NAME}}</a>
+by <a href="https://github.com/cpereira42" target="_blank">Cpereira42</a>
 
 &#xa0;
 
