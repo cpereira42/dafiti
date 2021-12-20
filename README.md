@@ -83,7 +83,7 @@ open .env and change database connect
 DATABASE_URL="mysql://root:password@127.0.0.1:3306/dafiti"
 
 # Create DB
-php bin/console doctrine:database:dafiti
+php bin/console doctrine:database:create
 
 # Migrate DB
 php bin/console doctrine:migrations:migrate
