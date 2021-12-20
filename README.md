@@ -1,12 +1,10 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Dafiti" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Nova_logo_dafiti.jpg" alt="Dafiti" />
 
   &#xa0;
 
   <!-- <a href="https://dafiti.netlify.app">Demo</a> -->
 </div>
-
-<h1 align="center">Dafiti</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/cpereira42/dafiti?color=56BEB8">
@@ -45,7 +43,8 @@
 
 ## About ##
 
-This project is an APIRestfull 
+This project is an APIRestfull with Frontend, made with Symfony, JavaScript, MySQL and HTML.
+In this project the user can add a category and  an item using the method POST, the information of an item can be changed with method PUT, an item can be searched with method GET and is possible to delete an item with method DELETE.
 
 ## Technologies ##
 
@@ -55,7 +54,7 @@ The following tools were used in this project:
 - Symfony
 - MySQL
 
-##Requirements ##
+## Requirements ##
 
 Before starting :<br>
 you need to have installed :
@@ -66,7 +65,7 @@ you need to have installed :
 
 
 
-##Starting ##
+## Starting ##
 
 ```bash
 # Clone this project
@@ -100,11 +99,5 @@ php -S localhost:8081
 Acess link http://localhost:8081/index.html
 
 ```
-
-## :memo: License ##
-
-by <a href="https://github.com/cpereira42" target="_blank">Cpereira42</a>
-
-&#xa0;
 
 <a href="#top">Back to top</a>
